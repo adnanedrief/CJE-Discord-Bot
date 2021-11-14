@@ -1,8 +1,8 @@
 {
-  "Token": "OTA5NDE3MTI2NDAwNTEyMDkw.YZD-sw.LWtzjdGQlXYl2uZ1eiQBoe37zPM",
+  "Token": "OTA5NDk1MTI0NzUxNDM3VODM0.YZFHVw.UM0W79PBn7HbTKbKfXbwzE6XgKI",
   "WelcomeChannel":"welcome-and-rules",
   "TargetedChannel": "general",
-  "ServerID": "795245885327671307",
+  "ServerID": "7952415885327671307",
   "RolesToGive": ["testRole","role1",""],
   "AuthorizedRole": "Admin"
 }

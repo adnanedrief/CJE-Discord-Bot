@@ -1,5 +1,5 @@
 /* 
-In  config.jso , You should fill  : 
+In  config.json , You should fill  : 
   - The Channel Name not the Channel ID
   - The Server ID not the Server Name
   - The roles Name and not the roles ID's
@@ -27,6 +27,7 @@ client.once('ready', () => {
 });
 
 client.on('guildMemberAdd', async member => {
+
   const channel = client.channels.cache.find(channel => channel.name === config.WelcomeChannel);  // channel can be choosen via name
   const channel2 = client.channels.cache.find(channel => channel.name === config.TargetedChannel);
 
@@ -36,7 +37,7 @@ client.on('guildMemberAdd', async member => {
 
   const myGuild = await client.guilds.cache.get(config.ServerID);
 
-  console.log('Array of your roles : ' + config.RolesToGive);
+  console.log('Array of roles to give : ' + config.RolesToGive);
 
   config.RolesToGive.forEach(async (GiveThisRole) => {
 
@@ -45,7 +46,7 @@ client.on('guildMemberAdd', async member => {
       member.roles.add(myRole);
       console.log('Assigned role ==> ' + GiveThisRole + " <==");
     }
-    
+
   });
 });
 
