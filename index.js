@@ -40,9 +40,9 @@ client.on('guildMemberAdd', async member => {
   console.log('Array of roles to give : ' + config.RolesToGive);
 
   config.RolesToGive.forEach(async (GiveThisRole) => {
-
+    // the role can be found via name
     if (GiveThisRole != '' && GiveThisRole != ' ' && GiveThisRole != null) {
-      const myRole = await myGuild.roles.cache.find(role => role.name === GiveThisRole); // the role can be found via name
+      const myRole = await myGuild.roles.cache.find(role => role.name === GiveThisRole);
       member.roles.add(myRole);
       console.log('Assigned role ==> ' + GiveThisRole + " <==");
     }
