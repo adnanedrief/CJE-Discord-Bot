@@ -1,6 +1,6 @@
 # CJE-Discord-Bot
 ## Description
-Simple Discord Bot for the Club Japonais ENSIAS ( Japanese Club ENSIAS ) that can't send welcome messages to new users and assign roles to them with ping and uptime commands using nodejs-discordJS v13
+Discord Bot for the Club Japonais ENSIAS ( Japanese Club ENSIAS ) that can send welcome messages to new users and assign roles to them with ping and uptime commands using NodeJS & DiscordJS v13
 
 # Bot info 
 ## This bot runs only on one server at once
