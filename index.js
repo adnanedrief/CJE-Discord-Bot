@@ -8,9 +8,9 @@ In  config.jso , You should fill  :
 */
 
 const Discord = require('discord.js');
-const { Token, TargetedChannel, ServerID, RoleToGive, AuthorizedRole } = require('./config.json'); // before setup make sure config.json has been filled in
+const config = require('./config.json'); // before setup make sure config.json has been filled in
 // Create a new client instance
-const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MEMBERS", "DIRECT_MESSAGES", "GUILD_MESSAGES"] }) // My discord bot
+const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MEMBERS", "DIRECT_MESSAGES", "GUILD_MESSAGES"] }); // My discord bot
 
 client.once('ready', () => {
   console.log('Ready !!! Now i\'m running');
@@ -27,23 +27,22 @@ client.once('ready', () => {
 });
 
 client.on('guildMemberAdd', async member => {
-  const channel = client.channels.cache.find(channel => channel.name === TargetedChannel);  // channel can be choosen via name
-  const channel2 = client.channels.cache.find(channel => channel.name === "bots");
+  const channel = client.channels.cache.find(channel => channel.name === config.WelcomeChannel);  // channel can be choosen via name
+  const channel2 = client.channels.cache.find(channel => channel.name === config.TargetedChannel);
 
-  const msg = `Welcome to ~ ${member.guild.name} ~ : <@${member.id}> , GO TO channel <#${channel2.id}>  and present your self`;
+  const msg = `Welcome <@${member.id}> to ~ ${member.guild.name} ~, Please change your nickname to your full name and introduce yourself in  <#${channel2.id}> `;
 
   channel.send(msg);
 
-  const myGuild = await client.guilds.cache.get(ServerID);
-  const myRole = await myGuild.roles.cache.find(role => role.name === RoleToGive); // the role can be found via name
+  const myGuild = await client.guilds.cache.get(config.ServerID);
+  const myRole = await myGuild.roles.cache.find(role => role.name === config.RoleToGive); // the role can be found via name
   member.roles.add(myRole);
 });
 
 client.on('messageCreate', message => {
 
-  if (message.member.roles.cache.some(role => role.name === AuthorizedRole)) {
+  if (message.member.roles.cache.some(role => role.name === config.AuthorizedRole)) {
 
-    const channel = client.channels.cache.find(channel => channel.name === TargetedChannel);  // channel can be choosen via name
     if (message.content === 'ping') {
 
       let embed = new Discord.MessageEmbed()
@@ -75,4 +74,4 @@ client.on('messageCreate', message => {
   }
 });
 
-client.login(Token);
+client.login(config.Token);
