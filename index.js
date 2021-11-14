@@ -40,8 +40,7 @@ client.on('guildMemberAdd', async member => {
 });
 
 client.on('messageCreate', message => {
-  // message.channel.send('pong');
-  console.log(message.channel);
+
   if (message.member.roles.cache.some(role => role.name === AuthorizedRole)) {
 
     const channel = client.channels.cache.find(channel => channel.name === TargetedChannel);  // channel can be choosen via name
@@ -52,11 +51,11 @@ client.on('messageCreate', message => {
         .setAuthor(`${client.user.username}`, client.user.displayAvatarURL(), '')
         .setTitle('🔍 Pingging ...')
         .setDescription('You are Pingging this Bot')
-        .addField('⏱️ Your ping', `${Date.now() - message.createdTimestamp}ms`,true)
+        .addField('⏱️ Your ping', `${Date.now() - message.createdTimestamp}ms`, true)
         .addField('⏳ Bot ping', `${Math.round(client.ws.ping)}ms`)
         .setFooter(`Requested By : ${message.author.username}`, message.author.avatarURL());
 
-      channel.send({ embeds: [embed] })
+      message.channel.send({ embeds: [embed] }) // to send reply to current channel from we get our message 
     }
     if (message.content === 'uptime') {
       // client.uptime is in millseconds
@@ -67,11 +66,11 @@ client.on('messageCreate', message => {
 
       let embed = new Discord.MessageEmbed()
         .setColor('#C69B6D')
-        .setAuthor(`${client.user.username}`,client.user.displayAvatarURL(), '')
+        .setAuthor(`${client.user.username}`, client.user.displayAvatarURL(), '')
         .addField('⏳ Uptime', `${days}d ${hours}h ${minutes}m ${seconds}s`)
         .setFooter(`Requested By : ${message.author.username}`, message.author.avatarURL());
 
-      channel.send({ embeds: [embed] })
+      message.channel.send({ embeds: [embed] }) // to send reply to current channel from we get our message 
     }
   }
 });

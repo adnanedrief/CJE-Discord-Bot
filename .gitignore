@@ -1,7 +1,6 @@
 .gitignore
 .replit
 #cred
-credentials.json
 # Logs
 logs
 *.log
