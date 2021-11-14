@@ -28,3 +28,7 @@ npm install discord.js nodemon
 nodemon index.js
 ```
 # Demo
+### Welcome
+![welcome](https://raw.githubusercontent.com/adnanedrief/CJE-Discord-Bot/main/welcome.png?token=ASH4O3TJDJYXW6DSP4QXQELBTK6FS "welcome" )
+### Ping & Uptime
+<img src="https://raw.githubusercontent.com/adnanedrief/CJE-Discord-Bot/main/ping%26uptime.png?token=ASH4O3TJOERCYYF72ESE2DDBTK6FY"  width="400" height="600">
