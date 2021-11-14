@@ -4,5 +4,5 @@
   "TargetedChannel": "general",
   "ServerID": "795245885327671307",
   "RolesToGive": ["testRole","role1",""],
-  "AuthorizedRoles": ["Admin"]
+  "AuthorizedRole": "Admin"
 }
