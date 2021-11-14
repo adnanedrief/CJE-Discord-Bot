@@ -4,7 +4,7 @@ In  config.jso , You should fill  :
   - The Server ID not the Server Name
   - The roles Name and not the roles ID's
   - AuthorizedRole, it's the role authorized to use bot commands
-  - RoleToGive, it's the role to give to new member
+  - RolesToGive, it's the list of roles to assign for the new member of the server
 */
 
 const Discord = require('discord.js');
@@ -35,8 +35,16 @@ client.on('guildMemberAdd', async member => {
   channel.send(msg);
 
   const myGuild = await client.guilds.cache.get(config.ServerID);
-  const myRole = await myGuild.roles.cache.find(role => role.name === config.RoleToGive); // the role can be found via name
-  member.roles.add(myRole);
+
+  console.log('Array of your roles : ' + config.RolesToGive);
+
+  config.RolesToGive.forEach(async (GiveThisRole) => {
+    if (GiveThisRole != '' && GiveThisRole != ' ' && GiveThisRole != null) {
+      const myRole = await myGuild.roles.cache.find(role => role.name === GiveThisRole); // the role can be found via name
+      member.roles.add(myRole);
+      console.log('Assigned role ==> ' + GiveThisRole + " <==");
+    }
+  });
 });
 
 client.on('messageCreate', message => {
