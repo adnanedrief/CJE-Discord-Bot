@@ -2,7 +2,7 @@
   "Token": "OTA5NDE3MTI2NDAwNTEyMDkw.YZD-sw.LWtzjdGQlXYl2uZ1eiQBoe37zPM",
   "WelcomeChannel":"welcome-and-rules",
   "TargetedChannel": "general",
-  "ServerID": "795245885327671307",
+  "ServerID": "7952458853207671307",
   "RolesToGive": ["testRole","role1",""],
   "AuthorizedRole": "Admin"
 }
