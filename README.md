@@ -29,6 +29,7 @@ nodemon index.js
 ```
 # Demo
 ### Welcome
-![welcome](https://raw.githubusercontent.com/adnanedrief/CJE-Discord-Bot/main/welcome.png?token=ASH4O3TJDJYXW6DSP4QXQELBTK6FS "welcome" )
+<img src="https://raw.githubusercontent.com/adnanedrief/CJE-Discord-Bot/main/welcome.png?token=GHSAT0AAAAAABPCLLRZVAVVH7NEP7MZYBJQYU7UCWA">
+
 ### Ping & Uptime
-<img src="https://raw.githubusercontent.com/adnanedrief/CJE-Discord-Bot/main/ping%26uptime.png?token=ASH4O3TJOERCYYF72ESE2DDBTK6FY"  width="400" height="600">
+<img src="https://raw.githubusercontent.com/adnanedrief/CJE-Discord-Bot/main/ping%26uptime.png?token=GHSAT0AAAAAABPCLLRYHZ5FQUTVSPERNQBQYU7UCXA"  width="400" height="600">
